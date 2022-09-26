@@ -1,0 +1,11 @@
+.Table {
+  height: 970px;
+  width: 335px;
+  position: 10px;
+  color: red;
+  background-color: blue;
+  position: absolute;
+  z-index: 4;
+  top: 100px;
+  left: 20px;
+}
