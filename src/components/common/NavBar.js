@@ -3,7 +3,7 @@ import styles from "./NavBar.module.css";
 
 function NavBar() {
   return (
-    <div className={styles.navBarBox}>
+    <div className={styles.container}>
       <div className={styles.title}>스마트 도시 사업관리 시스템</div>
       <div className={styles.navs}>
         <Link className={styles.nav} to="/dashboard">
@@ -22,6 +22,11 @@ function NavBar() {
           시스템관리
         </Link>
       </div>
+      <div className={styles.adminInfoBox}>
+        <div>ip:33324234</div>
+        <div>관리자 홍길동</div>
+      </div>
+      <div className={styles.logOut}>로그아웃</div>
     </div>
   );
 }

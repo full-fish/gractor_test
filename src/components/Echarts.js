@@ -19,6 +19,7 @@ function Echarts() {
         label: {
           show: true,
           position: "inner",
+          formatter: "{c}",
         },
         emphasis: {
           label: {

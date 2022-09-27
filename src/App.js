@@ -1,5 +1,5 @@
 import Map from "./components/Map";
-import Table from "./components/Table";
+import SideBar from "./components/SideBar";
 import Dashboard from "./components/Dashboard";
 import Service from "./components/Service";
 import Event from "./components/Event";
@@ -12,8 +12,8 @@ import Echarts from "./components/Echarts";
 function App() {
   return (
     <>
-      <Echarts />
-      {/* <Router>
+      {/* <Echarts /> */}
+      <Router>
         <NavBar />
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
@@ -23,14 +23,14 @@ function App() {
             element={
               <>
                 <Map />
-                <Table />
+                <SideBar />
               </>
             }
           />
           <Route path="/event" element={<Event />} />
           <Route path="/system" element={<System />} />
         </Routes>
-      </Router> */}
+      </Router>
     </>
   );
 }

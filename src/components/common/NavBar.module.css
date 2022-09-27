@@ -1,16 +1,17 @@
-.navBarBox {
+.container {
   position: absolute;
   height: 80px;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  color: red;
-  text-align: center;
+  width: 100%;
   background-color: #ffffff;
-  position: absolute;
   z-index: 2;
-  /* display: flex; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: "NanumSquare";
+  font-style: normal;
+  box-shadow: 0px 2px gray;
 }
+
 .title {
   position: absolute;
   width: 338px;
@@ -21,28 +22,74 @@
   align-items: center;
   justify-content: center;
 
-  font-family: "NanumSquare";
-  font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 34px;
   letter-spacing: -0.9375px;
   color: #4d5358;
 }
+
 .navs {
   display: flex;
-  position: fixed;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 .nav {
-  /* height: 10px; */
-  width: 100px;
-  /* margin: 100px auto; */
-  color: red;
+  width: 98px;
+  color: #697077;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.adminInfoBox {
+  position: absolute;
+  top: 22px;
+  right: 120px;
+}
+.adminInfoBox > div:nth-child(1) {
+  width: 98px;
+  height: 14px;
+  right: 120px;
+  top: calc(50% - 14px / 2 - 11px);
+
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #697077;
+}
+.adminInfoBox > div:nth-child(2) {
+  width: 92px;
+  height: 18px;
+  right: 127px;
+  top: calc(50% - 18px / 2 + 7px);
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #027fc2;
+}
+
+.logOut {
+  position: absolute;
+  width: 51px;
+  height: 16px;
+  right: 30px;
+  top: calc(50% - 16px / 2);
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #697077;
 }
 .otherPage {
   position: absolute;
   top: 110px;
-  font-size: 30px;
+  font-size: 50px;
 }
