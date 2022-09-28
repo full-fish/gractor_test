@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ECharts, { EChartsReactProps } from "echarts-for-react";
-function Echarts() {
+function Echarts({ text, left, top }) {
   const [options, setOptions] = useState({
     tooltip: {
       trigger: "item",
     },
+    title: {
+      top: `${top}`,
+      left: `${left}`,
+      text: `${text}`,
+      textStyle: { fontSize: "14", color: "#4D5358" },
+    },
     legend: {
       orient: "vertical",
-      top: "30%",
-      left: "63%",
+      top: "22%",
+      left: "72%",
+      icon: "circle",
     },
     series: [
       {
+        left: "-30px",
+        width: "265px",
+        height: "265px",
         name: "Access From",
         type: "pie",
         radius: ["40%", "70%"],
@@ -32,11 +42,11 @@ function Echarts() {
           show: false,
         },
         data: [
-          { value: 1048, name: "Search Engine" },
-          { value: 735, name: "Direct" },
-          { value: 580, name: "Email" },
-          { value: 484, name: "Union Ads" },
-          { value: 300, name: "Video Ads" },
+          { value: 1048, name: "A등급" },
+          { value: 735, name: "B등급" },
+          { value: 580, name: "C등급" },
+          { value: 484, name: "D등급" },
+          { value: 300, name: "E등급" },
         ],
       },
     ],

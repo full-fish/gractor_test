@@ -1,0 +1,144 @@
+.container {
+  position: absolute;
+  width: 335px;
+  height: 455px;
+  right: 20px;
+  bottom: 15px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px a(0, 0, 0, 0.45);
+  border-radius: 3px;
+  font-family: "NanumSquare";
+  font-style: normal;
+
+  z-index: 2;
+}
+.container > div:nth-child(1) {
+  position: absolute;
+  height: 20px;
+  left: 20px;
+  top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #4d5358;
+}
+.bar_H {
+  position: absolute;
+  height: 2px;
+  width: 295px;
+  left: 20px;
+  top: 45px;
+  background: linear-gradient(
+    to right,
+    #027fc2 0% 70%,
+    #34a0da7e 70% 93%,
+    white 93% 94%,
+    #045b8a 94% 100%
+  );
+}
+.label {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  height: 15px;
+  top: 67px;
+  right: 20px;
+}
+.label > div {
+  display: flex;
+}
+.label > div > div:nth-child(1) {
+  position: relative;
+  width: 3px;
+  height: 15px;
+  background: #1479c9;
+}
+.label > div > div:nth-child(2) {
+  position: relative;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  left: 3px;
+  color: #4d5358;
+}
+.barH2 {
+  position: absolute;
+  width: 335px;
+  height: 0px;
+  top: 87px;
+
+  border: 1px dashed #c1c7cd;
+}
+.container > li {
+  position: absolute;
+  left: 25px;
+  top: 107px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4d5358;
+}
+.container > li::marker {
+  color: #027fc2;
+}
+.container > table {
+  position: absolute;
+  width: 275px;
+  left: 45px;
+  top: 133px;
+  text-align: left;
+}
+.container > table > tbody > tr {
+  display: flex;
+  justify-content: space-between;
+  height: 24px;
+}
+tr:nth-child(1) {
+  border-bottom: 1px solid #dde1e6;
+}
+.container > table > tbody > tr > th {
+  flex-basis: 100px;
+}
+.container > table > tbody > tr > th:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+.container > table > tbody > tr > th:nth-child(3),
+th:nth-child(4) {
+  text-align: center;
+}
+.container > table > tbody > tr > th:nth-child(1) {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  color: #4d5358;
+}
+.container > table > tbody > tr > th:nth-child(2) > div:nth-child(1) {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1479c9;
+  width: 34px;
+}
+.container > table > tbody > tr > th:nth-child(2) > div:nth-child(2) {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #4d5358;
+}
+.container > table > tbody > tr > th:nth-child(3),
+th:nth-child(4) {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ee6f17;
+}
+
+th:nth-child(4) {
+  color: #8a3ffc;
+}

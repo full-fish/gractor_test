@@ -8,6 +8,8 @@
   background-color: rgb(255, 255, 255);
   font-family: "NanumSquare";
   font-style: normal;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.45);
+  border-radius: 3px;
   z-index: 2;
 }
 .mainTitle {
@@ -49,10 +51,29 @@
 }
 
 .boxs > div {
+  position: relative;
   box-sizing: border-box;
   width: 295px;
   height: 265px;
   background: #ffffff;
   border: 1px solid #dde1e6;
   border-radius: 3px;
+}
+.subTitle {
+  position: relative;
+  top: 15px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #4d5358;
+}
+.EchartsBox {
+  position: relative;
+  height: 230px;
+  width: 295px;
+  /* right: 80px; */
+  /* left: 0px; */
+  /* bottom: 20px; */
 }
