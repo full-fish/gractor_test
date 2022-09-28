@@ -1,26 +1,16 @@
-import styles from "./SideBar.module.css";
-function SideBar() {
+import styles from "./SideBarRightUp.module.css";
+function SideBarRightUp() {
   return (
     <>
-      <div className={styles.container_left}>
-        <div className={styles.mainTitle_left}> 스마트 도시 서비스 주요 현황</div>
-        <div className={styles.bar_left}></div>
-        <div className={styles.boxs_left}>
-          <div>0</div>
-          <div>1</div>
-          <div>2</div>
-        </div>
-      </div>
-
-      <div className={styles.container_rightUp}>
-        <div className={styles.bar_V_rightUp}></div>
-        <div className={styles.address_box_rightUp}>
+      <div className={styles.container}>
+        <div className={styles.bar_V}></div>
+        <div className={styles.address_box}>
           <div>고척중학교 교차로</div>
           <div>서울특별시 구로구 고척동 76-224</div>
         </div>
-        <div className={styles.bar_H_rightUp}></div>
+        <div className={styles.bar_H}></div>
         <li>설치위치</li>
-        <div className={styles.gps_rightUp}>
+        <div className={styles.gps}>
           <div>
             <span>위도</span>
             <span></span>
@@ -38,7 +28,7 @@ function SideBar() {
           </div>
         </div>
         <li>디바이스 상태</li>
-        <table className={styles.deviceCondition_rightUp}>
+        <table className={styles.deviceCondition}>
           <tbody>
             <tr>
               <td>단말 명칭</td>
@@ -58,11 +48,19 @@ function SideBar() {
             </tr>
           </tbody>
         </table>
-        <div className={styles.bar_H2_rightUp}></div>
+        <div className={styles.bar_H2}></div>
+        <div className={styles.bar_H3}></div>
+        <div className={styles.subContainer}>
+          <div>
+            <div>교차로 알리미 서비스</div>
+            <div>
+              어린이 보호 구역과 교차로 지역에 진입하는 차량 속도를 AI/IoT 기술을 활용하여 보행자 및
+              운전자 동시에 알려주는 사고예방 안전서비스 입니다.
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className={styles.container_rightDown}></div>
     </>
   );
 }
-export default SideBar;
+export default SideBarRightUp;

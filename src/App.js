@@ -1,13 +1,12 @@
-import Dashboard from "./components/otherPages/Dashboard";
-import Service from "./components/otherPages/Service";
-import Event from "./components/otherPages/Event";
-import System from "./components/otherPages/System";
-import Map from "./components/Map";
-import SideBar from "./components/SideBar";
+import Dashboard from "./pages/Dashboard";
+import Service from "./pages/Service";
+import Event from "./pages/Event";
+import System from "./pages/System";
+import GatherData from "./pages/GatherData";
 import NavBar from "./components/common/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Echarts from "./components/Echarts";
+import Echarts from "./components/gatherData/Echarts";
 
 function App() {
   return (
@@ -18,15 +17,7 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/service" element={<Service />} />
-          <Route
-            path="/"
-            element={
-              <>
-                <Map />
-                <SideBar />
-              </>
-            }
-          />
+          <Route path="/" element={<GatherData />} />
           <Route path="/event" element={<Event />} />
           <Route path="/system" element={<System />} />
         </Routes>

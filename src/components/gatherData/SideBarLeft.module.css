@@ -1,0 +1,58 @@
+.container {
+  position: absolute;
+  height: 970px;
+  width: 335px;
+  top: 95px;
+  left: 20px;
+  color: red;
+  background-color: rgb(255, 255, 255);
+  font-family: "NanumSquare";
+  font-style: normal;
+  z-index: 2;
+}
+.mainTitle {
+  position: absolute;
+  height: 20px;
+  left: 20px;
+  top: 20px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+
+  color: #4d5358;
+}
+.bar {
+  position: absolute;
+  height: 2px;
+  width: 295px;
+  left: 20px;
+  top: 45px;
+  background: linear-gradient(
+    to right,
+    #027fc2 0% 70%,
+    #34a0da7e 70% 93%,
+    white 93% 94%,
+    #045b8a 94% 100%
+  );
+}
+.boxs {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 835px;
+  width: 295px;
+  top: 67px;
+  left: 20px;
+  background-color: red;
+}
+
+.boxs > div {
+  box-sizing: border-box;
+  width: 295px;
+  height: 265px;
+  background: #ffffff;
+  border: 1px solid #dde1e6;
+  border-radius: 3px;
+}
