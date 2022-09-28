@@ -38,6 +38,27 @@ function SideBar() {
           </div>
         </div>
         <li>디바이스 상태</li>
+        <table className={styles.deviceCondition_rightUp}>
+          <tbody>
+            <tr>
+              <td>단말 명칭</td>
+              <td>000정보통신</td>
+            </tr>
+            <tr>
+              <td>설치일</td>
+              <td>2018.11.25</td>
+            </tr>
+            <tr>
+              <td>단말 운영상태</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>단말 통신상태</td>
+              <td>정상</td>
+            </tr>
+          </tbody>
+        </table>
+        <div className={styles.bar_H2_rightUp}></div>
       </div>
 
       <div className={styles.container_rightDown}></div>

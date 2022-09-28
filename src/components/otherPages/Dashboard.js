@@ -1,4 +1,4 @@
-import styles from "./common/NavBar.module.css";
+import styles from "./OtherPages.module.css";
 
 function Dashboard() {
   return <div className={styles.otherPage}>Dashboard</div>;

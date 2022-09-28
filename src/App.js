@@ -1,9 +1,9 @@
+import Dashboard from "./components/otherPages/Dashboard";
+import Service from "./components/otherPages/Service";
+import Event from "./components/otherPages/Event";
+import System from "./components/otherPages/System";
 import Map from "./components/Map";
 import SideBar from "./components/SideBar";
-import Dashboard from "./components/Dashboard";
-import Service from "./components/Service";
-import Event from "./components/Event";
-import System from "./components/System";
 import NavBar from "./components/common/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
