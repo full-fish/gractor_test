@@ -88,3 +88,10 @@
   line-height: 16px;
   color: #697077;
 }
+img {
+  position: absolute;
+  top: 21px;
+  left: 30px;
+  width: 53.45px;
+  height: 38.98px;
+}

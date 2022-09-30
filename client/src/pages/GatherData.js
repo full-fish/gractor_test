@@ -4,14 +4,13 @@ import SideBarLeft from "../components/gatherData/SideBarLeft";
 import SideBarRightUp from "../components/gatherData/SideBarRightUp";
 import SideBarRightDown from "../components/gatherData/SideBarRightDown";
 
-function Event() {
+function GatherData() {
   return (
     <div>
       <Map />
       <SideBarLeft />
-      <SideBarRightUp />
       <SideBarRightDown />
     </div>
   );
 }
-export default Event;
+export default GatherData;

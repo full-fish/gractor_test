@@ -1,12 +1,14 @@
 import styles from "./SideBarRightUp.module.css";
-function SideBarRightUp() {
+function SideBarRightUp({ title, gps, address }) {
+  // console.log("gps");
+  // console.log(gps);
   return (
     <>
       <div className={styles.container}>
         <div className={styles.bar_V}></div>
         <div className={styles.address_box}>
-          <div>고척중학교 교차로</div>
-          <div>서울특별시 구로구 고척동 76-224</div>
+          <div>{title}</div>
+          <div>{address}</div>
         </div>
         <div className={styles.bar_H}></div>
         <li>설치위치</li>
@@ -14,12 +16,12 @@ function SideBarRightUp() {
           <div>
             <span>위도</span>
             <span></span>
-            <span>37.44564645606</span>
+            <span>{gps[0]}</span>
           </div>
           <div>
             <span>경도</span>
             <span></span>
-            <span>123.54435645606</span>
+            <span>{gps[1]}</span>
           </div>
           <div>
             <span>고도(m)</span>

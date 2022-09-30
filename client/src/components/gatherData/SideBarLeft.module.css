@@ -4,7 +4,6 @@
   width: 335px;
   top: 95px;
   left: 20px;
-  color: red;
   background-color: rgb(255, 255, 255);
   font-family: "NanumSquare";
   font-style: normal;
@@ -47,7 +46,6 @@
   width: 295px;
   top: 67px;
   left: 20px;
-  background-color: red;
 }
 
 .boxs > div {

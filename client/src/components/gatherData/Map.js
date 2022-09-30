@@ -1,27 +1,129 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import SideBarRightUp from "./SideBarRightUp";
+import styles from "./Map.module.css";
+
 const { kakao } = window;
 function Map() {
+  const [title, setTitle] = useState("그렉터");
+  const [gps, setGps] = useState([37.511394, 127.0796571]);
+  const [address, setAddress] = useState("서울특별시 송파구 올림픽로 82");
+  const [slideBarValue, setSlideBarValue] = useState(9);
+  let map = "";
+
   useEffect(() => {
     const container = document.getElementById("myMap");
     const options = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3,
+      center: new kakao.maps.LatLng(37.511394, 127.0796571),
+      level: 15 - slideBarValue,
     };
-    const map = new kakao.maps.Map(container, options);
-    var zoomControl = new kakao.maps.ZoomControl();
-    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-  }, []);
+    map = new kakao.maps.Map(container, options);
+    map.setZoomable(false); // 스크롤줌 막음
+    var positions = [
+      {
+        title: "그렉터",
+        latlng: new kakao.maps.LatLng(37.511394, 127.0796571),
+        address: "서울특별시 송파구 올림픽로 82",
+      },
+      {
+        title: "종합운동장",
+        latlng: new kakao.maps.LatLng(37.5158376, 127.0727986),
+        address: "서울특별시 송파구 올림픽로 25",
+      },
+      {
+        title: "롯데월드",
+        latlng: new kakao.maps.LatLng(37.5088705, 127.0999597),
+        address: "서울특별시 송파구 올림픽로 240",
+      },
+    ];
+    // ! 마커
+    let marker = [];
+    for (let i = 0; i < positions.length; i++) {
+      marker.push(
+        new kakao.maps.Marker({
+          position: positions[i].latlng,
+          clickable: true, // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+          map: map,
+        })
+      );
+    }
+
+    //! 인포윈도우
+    var content = [
+      `<div style="border: 2px solid #027FC2; border-radius:17px; background:#ffffff; padding:8px 20px;">그렉터</div>`,
+      `<div style="border: 2px solid #027FC2; border-radius:17px; background:#ffffff; padding:8px 20px;">종합운동장</div>`,
+      `<div style="border: 2px solid #027FC2; border-radius:17px; background:#ffffff; padding:8px 20px;">롯데월드</div>`,
+    ];
+
+    for (let i = 0; i < positions.length; i++) {
+      var customOverlay = new kakao.maps.CustomOverlay({
+        position: positions[i].latlng,
+        content: content[i],
+        xAnchor: 0.5, // 컨텐츠의 x 위치
+        yAnchor: 2.1, // 컨텐츠의 y 위치
+        map: map,
+      });
+    }
+    //! 마커 클릭 이벤트
+
+    for (let i = 0; i < marker.length; i++) {
+      kakao.maps.event.addListener(marker[i], "click", function () {
+        setTitle(positions[i].title);
+        setGps([positions[i].latlng.getLat(), positions[i].latlng.getLng()]);
+        setAddress(positions[i].address);
+      });
+    }
+  }, [slideBarValue]);
+  //! 슬라이드 바 관련
+  function zoomIn() {
+    if (slideBarValue < 14) {
+      setSlideBarValue((cur) => cur + 1);
+      map.setLevel(map.getLevel() - 1);
+    }
+  }
+  function zoomOut() {
+    if (slideBarValue > 1) {
+      setSlideBarValue((cur) => cur - 1);
+      map.setLevel(map.getLevel() + 1);
+    }
+  }
+  const onChange = (e) => {
+    setSlideBarValue(parseInt(e.target.value));
+    map.setLevel(slideBarValue);
+  };
   return (
-    <div
-      id="myMap"
-      style={{
-        top: "80px",
-        width: "100%",
-        height: "100vh",
-        position: "relative",
-        zIndex: 1,
-      }}
-    ></div>
+    <>
+      <div
+        id="myMap"
+        style={{
+          width: "100%",
+          height: "100vh",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        <SideBarRightUp title={title} gps={gps} address={address} />;
+        <div className={styles.slideBarBox}>
+          <div className={styles.slideBarUp} onClick={zoomIn}>
+            +
+          </div>
+          <div className={styles.slideBar_barH}></div>
+          <input
+            className={styles.slideBar}
+            id="temp"
+            type="range"
+            step="1"
+            onChange={onChange}
+            value={slideBarValue}
+            min="1"
+            max="14"
+          />
+          <div className={styles.slideBar_barH} style={{ top: "164px" }}></div>
+          <div className={styles.slideBarDown} onClick={zoomOut}>
+            -
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

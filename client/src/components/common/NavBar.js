@@ -4,6 +4,7 @@ import styles from "./NavBar.module.css";
 function NavBar() {
   return (
     <div className={styles.container}>
+      <img src="img/title.png"></img>
       <div className={styles.title}>스마트 도시 사업관리 시스템</div>
       <div className={styles.navs}>
         <Link className={styles.nav} to="/dashboard">

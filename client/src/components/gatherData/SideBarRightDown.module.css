@@ -5,7 +5,7 @@
   right: 20px;
   bottom: 15px;
   background: #ffffff;
-  box-shadow: 0px 0px 4px a(0, 0, 0, 0.45);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.45);
   border-radius: 3px;
   font-family: "NanumSquare";
   font-style: normal;
