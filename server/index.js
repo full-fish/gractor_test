@@ -7,7 +7,7 @@ const api = require("./routes/api");
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:8001/",
+    origin: ["http://localhost:8001", "http://localhost"],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   })

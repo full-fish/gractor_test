@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import SideBarRightUp from "./SideBarRightUp";
 import styles from "./Map.module.css";
-
+import axios from "axios";
+async function getPositionInfo() {
+  const res = await axios.get("http://localhost:8001/api/", { withCredentials: true });
+  return res;
+}
 const { kakao } = window;
-function Map() {
+function Map({ position3 }) {
+  const [positions, setPositions] = useState([]);
   const [title, setTitle] = useState("그렉터");
   const [gps, setGps] = useState([37.511394, 127.0796571]);
   const [address, setAddress] = useState("서울특별시 송파구 올림픽로 82");
   const [slideBarValue, setSlideBarValue] = useState(9);
   let map = "";
-
+  useEffect(() => {
+    getPositionInfo().then(async (res) => {
+      let data = res.data.data;
+      data.map((ele) => (ele["latlng"] = new kakao.maps.LatLng(ele.lat, ele.lng)));
+      setPositions(data);
+    });
+  }, []);
   useEffect(() => {
     const container = document.getElementById("myMap");
     const options = {
@@ -18,23 +29,23 @@ function Map() {
     };
     map = new kakao.maps.Map(container, options);
     map.setZoomable(false); // 스크롤줌 막음
-    var positions = [
-      {
-        title: "그렉터",
-        latlng: new kakao.maps.LatLng(37.511394, 127.0796571),
-        address: "서울특별시 송파구 올림픽로 82",
-      },
-      {
-        title: "종합운동장",
-        latlng: new kakao.maps.LatLng(37.5158376, 127.0727986),
-        address: "서울특별시 송파구 올림픽로 25",
-      },
-      {
-        title: "롯데월드",
-        latlng: new kakao.maps.LatLng(37.5088705, 127.0999597),
-        address: "서울특별시 송파구 올림픽로 240",
-      },
-    ];
+    // var positions = [
+    //   {
+    //     title: "그렉터",
+    //     latlng: new kakao.maps.LatLng(37.511394, 127.0796571),
+    //     address: "서울특별시 송파구 올림픽로 82",
+    //   },
+    //   {
+    //     title: "종합운동장",
+    //     latlng: new kakao.maps.LatLng(37.5158376, 127.0727986),
+    //     address: "서울특별시 송파구 올림픽로 25",
+    //   },
+    //   {
+    //     title: a,
+    //     latlng: new kakao.maps.LatLng(37.5088705, 127.0999597),
+    //     address: "서울특별시 송파구 올림픽로 240",
+    //   },
+    // ];
     // ! 마커
     let marker = [];
     for (let i = 0; i < positions.length; i++) {
@@ -72,7 +83,7 @@ function Map() {
         setAddress(positions[i].address);
       });
     }
-  }, [slideBarValue]);
+  }, [slideBarValue, positions]);
   //! 슬라이드 바 관련
   function zoomIn() {
     if (slideBarValue < 14) {

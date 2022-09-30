@@ -1,7 +1,7 @@
 import styles from "./SideBarRightUp.module.css";
 function SideBarRightUp({ title, gps, address }) {
-  // console.log("gps");
-  // console.log(gps);
+  console.log("gps");
+  console.log(gps);
   return (
     <>
       <div className={styles.container}>
