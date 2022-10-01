@@ -1,7 +1,7 @@
 .container {
   position: absolute;
   width: 335px;
-  height: 500px;
+  height: 390px;
   top: 95px;
   right: 20px;
   background: #ffffff;
@@ -138,8 +138,9 @@
   position: absolute;
   height: 3px;
   width: 130px;
+  top: 362px;
   left: 103px;
-  bottom: 135px;
+
   background: linear-gradient(
     to right,
     #349fda 0px 20px,
@@ -155,22 +156,26 @@
     #dde1e6 110px 130px
   );
 }
-.bar_H3 {
-  position: absolute;
-  width: 335px;
-  height: 0px;
-  top: 390px;
-  border: 1px solid #349fda;
-}
+
 .subContainer {
   position: absolute;
   width: 335px;
   height: 110px;
-  bottom: 0px;
-  background: rgba(52, 159, 218, 0.1);
+  right: 20px;
+  top: 482px;
+  background: rgba(235, 245, 251, 1);
   border-radius: 0px 0px 3px 3px;
+  z-index: 2;
 }
-.subContainer > div {
+.bar_H3 {
+  position: absolute;
+  width: 335px;
+  height: 0px;
+  top: 0px;
+  border: 1px solid #349fda;
+  z-index: 3;
+}
+.subContainer > div:nth-of-type(2) {
   position: absolute;
   width: 295px;
   height: 82px;
@@ -204,4 +209,16 @@
   line-height: 18px;
   text-align: justify;
   color: #027fc2;
+}
+input {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #027fc2;
+  font-size: 20;
+  background: rgba(255, 255, 255, 0);
+  border: 0;
+}
+.close {
+  opacity: 0;
 }

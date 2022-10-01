@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
 }
-.nav {
+.navs > * {
   width: 98px;
   color: #697077;
 

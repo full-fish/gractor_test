@@ -9,7 +9,6 @@
   border-radius: 3px;
   font-family: "NanumSquare";
   font-style: normal;
-
   z-index: 2;
 }
 .container > div:nth-child(1) {

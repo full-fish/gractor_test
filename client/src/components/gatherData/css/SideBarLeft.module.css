@@ -71,7 +71,26 @@
   position: relative;
   height: 230px;
   width: 295px;
-  /* right: 80px; */
-  /* left: 0px; */
-  /* bottom: 20px; */
+}
+
+.nonSelect {
+  position: absolute;
+  bottom: 30px;
+  left: 130px;
+  background: #c1c7cd;
+  transform: rotate(-90deg);
+  border: 1px solid #c1c7cd;
+  padding: 5px;
+  border-radius: 2em;
+}
+
+.select {
+  position: absolute;
+  bottom: 30px;
+  left: 130px;
+  background: #027fc2;
+  transform: rotate(-90deg);
+  border: 1px solid #3b8c9a;
+  padding: 7px;
+  border-radius: 2em;
 }

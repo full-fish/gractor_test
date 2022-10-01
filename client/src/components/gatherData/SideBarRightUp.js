@@ -1,7 +1,10 @@
-import styles from "./SideBarRightUp.module.css";
+import { useState } from "react";
+import styles from "./css/SideBarRightUp.module.css";
 function SideBarRightUp({ title, gps, address }) {
-  console.log("gps");
-  console.log(gps);
+  function onClick() {
+    setClose((cur) => !cur);
+  }
+  const [close, setClose] = useState(false);
   return (
     <>
       <div className={styles.container}>
@@ -51,15 +54,16 @@ function SideBarRightUp({ title, gps, address }) {
           </tbody>
         </table>
         <div className={styles.bar_H2}></div>
+      </div>
+      <div className={close ? styles.close : styles.subContainer}>
         <div className={styles.bar_H3}></div>
-        <div className={styles.subContainer}>
+        <div>
+          <div>교차로 알리미 서비스</div>
           <div>
-            <div>교차로 알리미 서비스</div>
-            <div>
-              어린이 보호 구역과 교차로 지역에 진입하는 차량 속도를 AI/IoT 기술을 활용하여 보행자 및
-              운전자 동시에 알려주는 사고예방 안전서비스 입니다.
-            </div>
+            어린이 보호 구역과 교차로 지역에 진입하는 차량 속도를 AI/IoT 기술을 활용하여 보행자 및
+            운전자 동시에 알려주는 사고예방 안전서비스 입니다.
           </div>
+          <input type={"button"} value="X" onClick={onClick} />
         </div>
       </div>
     </>

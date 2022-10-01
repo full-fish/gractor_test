@@ -6,12 +6,9 @@ import GatherData from "./pages/GatherData";
 import NavBar from "./components/common/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Echarts from "./components/gatherData/Echarts";
-
 function App() {
   return (
     <>
-      {/* <Echarts /> */}
       <Router>
         <NavBar />
         <Routes>
