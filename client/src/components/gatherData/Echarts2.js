@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ECharts, { EChartsReactProps } from "echarts-for-react";
+import React from "react";
+import ECharts from "echarts-for-react";
 function Echarts({ chartData, text, left, top }) {
   return (
     <ECharts

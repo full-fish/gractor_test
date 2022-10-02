@@ -1,6 +1,7 @@
 import axios from "axios";
-
+// let url = "http://localhost:8000";
+let url = "http://gractor.s3-website.ap-northeast-2.amazonaws.com/";
 export async function getMap() {
-  const res = await axios.get("http://localhost:8000/api/map", { withCredentials: true });
+  const res = await axios.get(`${url}/api/map`, { withCredentials: true });
   return res;
 }

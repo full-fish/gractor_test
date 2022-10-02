@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import ECharts, { EChartsReactProps } from "echarts-for-react";
+import ECharts from "echarts-for-react";
 function Echarts({ chartData, text, left, top, select }) {
   let data = [];
   if (select === 1) {
