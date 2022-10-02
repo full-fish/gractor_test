@@ -12,7 +12,7 @@ function NavBar() {
   }, []);
   return (
     <div className={styles.container}>
-      <img src="img/title.png"></img>
+      <img src="img/title.png" crossOrigin="anonymous" alt=""></img>
       <div className={styles.title}>스마트 도시 사업관리 시스템</div>
       <div className={styles.navs}>
         <Link to="/dashboard">대시보드</Link>

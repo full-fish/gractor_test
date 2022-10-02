@@ -29,13 +29,13 @@ function TopBar() {
       <div>날씨</div>
       <div>21</div>
       <div>℃</div>
-      <img src="img/cloud.png" />
+      <img src="img/cloud.png" crossOrigin="anonymous" alt="" />
       <div className={styles.bar_V} style={{ left: "348px" }}></div>
       <div>PM2.5</div>
       <div>27</div>
       <div>좋음</div>
       <div className={styles.bar_V} style={{ left: "452px" }}></div>
-      <img src="img/T.png" />
+      <img src="img/T.png" crossOrigin="anonymous" alt="" />
     </div>
   );
 }

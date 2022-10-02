@@ -8,7 +8,7 @@ import BottomBar from "./BottomBar";
 const axios = require("../../services/map");
 
 const { kakao } = window;
-function Map({}) {
+function Map() {
   const [positions, setPositions] = useState([]);
   const [title, setTitle] = useState("그렉터");
   const [gps, setGps] = useState([37.5113945, 127.0796585]);
