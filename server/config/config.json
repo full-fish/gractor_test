@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "1234",
+    "password": "12345678",
     "database": "gractor_development",
-    "host": "127.0.0.1",
+    "host": "jumt-moment-trip.coe5erwjzpjy.ap-northeast-2.rds.amazonaws.com",
+    "port": "13306",
     "dialect": "mysql"
   },
   "test": {
