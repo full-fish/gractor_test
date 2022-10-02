@@ -1,27 +1,22 @@
 import styles from "./css/SideBarLeft.module.css";
 import Echarts from "./Echarts";
 import Echarts2 from "./Echarts2";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+const axios = require("../../services/sideBarLeft");
+
 let data;
 
-async function getchart() {
-  const res = await axios.get("http://localhost:8000/api/chart", { withCredentials: true });
-  return res;
-}
 function SideBarLeft() {
   const [chartData, setChartData] = useState({});
   const [select, setSelect] = useState("0");
   useEffect(() => {
-    getchart().then((res) => {
+    axios.getSideBarLeft().then((res) => {
       data = res.data.data;
       setChartData(data[0]);
     });
   }, []);
   const onClick = (e) => {
     setSelect(e.target.value);
-
-    console.log(e.target.value);
     setChartData(data[e.target.value]);
   };
   return (

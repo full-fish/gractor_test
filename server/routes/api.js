@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const locationController = require("../controllers/location");
-const chartController = require("../controllers/chart");
+const mapController = require("../controllers/map");
+const sideBarLeftController = require("../controllers/sideBarLeft");
+const navBarController = require("../controllers/navBar");
 
-router.get("/location", locationController.get);
-router.get("/chart", chartController.get);
+router.get("/map", mapController.get);
+router.get("/sideBarLeft", sideBarLeftController.get);
+router.get("/navBar", navBarController.get);
 
 module.exports = router;

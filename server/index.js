@@ -14,6 +14,6 @@ app.use(
 );
 app.use("/api", api);
 
-server = app.listen(port, () => {
+server = app.listen(port, "0.0.0.0", () => {
   console.log(`Listening on ${port}`);
 });

@@ -4,13 +4,9 @@ import SideBarRightUp from "./SideBarRightUp";
 import SideBarRightDown from "./SideBarRightDown";
 import TopBar from "./TopBar";
 import styles from "./css/Map.module.css";
-import axios from "axios";
 import BottomBar from "./BottomBar";
+const axios = require("../../services/map");
 
-async function getPositionInfo() {
-  const res = await axios.get("http://localhost:8000/api/location", { withCredentials: true });
-  return res;
-}
 const { kakao } = window;
 function Map({}) {
   const [positions, setPositions] = useState([]);
@@ -20,7 +16,7 @@ function Map({}) {
   const [slideBarValue, setSlideBarValue] = useState(9);
   let map = "";
   useEffect(() => {
-    getPositionInfo().then((res) => {
+    axios.getMap().then((res) => {
       let data = res.data.data;
       data.map((ele) => (ele["latlng"] = new kakao.maps.LatLng(ele.lat, ele.lng)));
       setPositions(data);
